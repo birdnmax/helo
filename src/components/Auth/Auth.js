@@ -11,7 +11,7 @@ class Auth extends Component{
     }
 
     login = () => {
-        axios.post('api/login', this.state)
+        axios.post('/api/login', this.state)
             .then((res) => {
                 if(res.data.success){
                     this.props.dispatch({
@@ -26,7 +26,7 @@ class Auth extends Component{
     }
 
     register = () => {
-        axios.post('api/register', this.state)
+        axios.post('/api/register', this.state)
             .then((res) => {
                 this.props.dispatch({
                     type: 'user',
@@ -36,6 +36,8 @@ class Auth extends Component{
             })
     }
 
+    handleChange
+
     render(){
         return (
             <div className='Auth'>
@@ -43,11 +45,15 @@ class Auth extends Component{
                     <h1>Helo</h1>
                     <div className='user-info'>
                         <p>Username:</p>
-                        <input value={this.state.username}/>
+                        <input 
+                            onChange={this.handleChange}
+                            value={this.state.username}/>
                     </div>
                     <div className='user-info'>
                         <p>Password:</p>
-                        <input value={this.state.password}/>
+                        <input 
+                            onChange={this.handleChange}
+                            value={this.state.password}/>
                     </div>
                     <div className='auth-buttons'>
                         <button className='main-button' onClick={this.login}>Login</button>

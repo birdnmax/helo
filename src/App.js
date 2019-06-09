@@ -8,12 +8,12 @@ import store from './Ducks/store';
 import './App.css';
 
 class App extends Component {
-  componentDidMount(){
-    axios.get('api/ping')
-      .then((res) => {
-        console.log(res.data)
-      })
-  }
+  // componentDidMount(){
+  //   axios.get('http://localhost:4000/api/ping')
+  //     .then((res) => {
+  //       console.log(res.data)
+  //     })
+  // }
   
   render(){
     return (
